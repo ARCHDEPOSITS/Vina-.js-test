@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Command Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .error-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <button class="error-button" onclick="handleCommand('VINA_ERR_1')">Show Error 1</button>
+    <button class="error-button" onclick="handleCommand('VINA_ERR_2')">Show Error 2</button>
+    <div id="message" class="error-message"></div>
+
+    <script>
+        function handleCommand(command) {
+            const messageElement = document.getElementById('message');
+
+            switch (command) {
+                case 'VINA_ERR_1':
+                    messageElement.textContent = 'Error 1: Something went wrong!';
+                    break;
+                case 'VINA_ERR_2':
+                    messageElement.textContent = 'Error 2: Another issue occurred!';
+                    break;
+                default:
+                    messageElement.textContent = 'Unknown command!';
+            }
+        }
+    </script>
+</body>
+</html>
